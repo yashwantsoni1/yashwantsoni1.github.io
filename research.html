@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Yashwant Soni</title>
+<meta name="description" content="Yashwant Soni, seismologist. Interferometry, imaging and artificial intelligence for the solid Earth.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>〰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IIAI <small>Yashwant Soni</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Introduction</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="resume.html">Resume</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="page-intro">
+  <div class="wrap">
+    <h1>Research</h1>
+    <p>My work joins three threads: extracting signal from seismic noise, building images of the subsurface, and using machine learning to make both faster and more reliable. The figures below are live, simplified versions of those methods.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap study">
+    <div>
+      <h2>Ambient noise interferometry</h2>
+      <p>Ocean waves, wind and traffic make the ground vibrate all the time. Cross-correlating that noise between two stations, then stacking day after day, makes random fluctuations cancel while the coherent wave travelling between the stations grows.</p>
+      <p>The result approximates the Green's function, as if one station were a source and the other a receiver.</p>
+    </div>
+    <figure class="figure">
+      <canvas id="interferometry" style="height:320px" role="img" aria-label="Cross-correlation stack converging to symmetric peaks"></canvas>
+      <figcaption><b>Days stacked: <span id="xc-days">0</span>.</b> Peaks at positive and negative lag emerge as noise averages out.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap study">
+    <div>
+      <h2>Seismic tomography</h2>
+      <p>Travel times between many station pairs are inverted for a 3-D shear-velocity model. Red regions are slower than average, often warmer, fluid-rich or sedimentary rock; blue regions are faster, usually colder or older lithosphere.</p>
+      <div class="controls" role="group" aria-label="Choose depth slice">
+        <span>Depth slice</span>
+        <button class="btn" data-depth="10" aria-pressed="true">10 km</button>
+        <button class="btn" data-depth="30" aria-pressed="false">30 km</button>
+        <button class="btn" data-depth="60" aria-pressed="false">60 km</button>
+      </div>
+    </div>
+    <figure class="figure">
+      <div class="tomo-pair">
+        <canvas id="tomo-map" style="height:260px" role="img" aria-label="Map view of velocity anomalies with stations and ray paths"></canvas>
+        <canvas id="tomo-section" style="height:260px" role="img" aria-label="Cross-section A to A prime with a dipping fast anomaly"></canvas>
+      </div>
+      <div class="colorbar"><span>Slow</span><i></i><span>Fast</span><span>dVs ±5%</span></div>
+      <figcaption><b>Map view and profile A–A′.</b> Triangles are stations, grey lines are inter-station paths, and the dashed line marks the selected depth.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap study">
+    <div>
+      <h2>Time series analysis</h2>
+      <p>Before any imaging, continuous records are cleaned and scanned for arrivals. Filtering removes long-period drift and high-frequency noise; a short-term over long-term average ratio (STA/LTA) flags sudden energy, giving a first-arrival pick.</p>
+    </div>
+    <figure class="figure">
+      <canvas id="timeseries" style="height:330px" role="img" aria-label="Raw, filtered and STA/LTA traces with a P-wave pick"></canvas>
+      <figcaption><b>From raw record to pick.</b> The trigger fires when STA/LTA crosses the threshold.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap study">
+    <div>
+      <h2>Deep learning for seismology</h2>
+      <p>Classic triggers struggle with noisy data and overlapping events. A neural network trained on labelled waveforms reads each window and outputs the probability of a P arrival, an S arrival or noise, scaling to years of continuous data.</p>
+    </div>
+    <figure class="figure">
+      <canvas id="neuralnet" style="height:320px" role="img" aria-label="Neural network classifying a seismic waveform"></canvas>
+      <figcaption><b>Phase classification.</b> A waveform window passes through the network to class probabilities.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Selected publications</h2>
+    <ol class="pubs">
+      <li><b>Soni, Y.</b>, [Co-authors] (Year). [Paper title on ambient noise tomography of ...]. <span class="venue">[Journal name]</span>. <a href="#">DOI</a></li>
+      <li><b>Soni, Y.</b>, [Co-authors] (Year). [Paper title on machine learning phase picking ...]. <span class="venue">[Journal name]</span>. <a href="#">DOI</a></li>
+      <li>[Co-author], <b>Soni, Y.</b> (Year). [Paper title]. <span class="venue">[Journal or conference]</span>. <a href="#">DOI</a></li>
+    </ol>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Yashwant Soni</span>
+    <span><a href="https://github.com/yashwantsoni1">GitHub</a> &nbsp; <a href="mailto:your.email@example.com">Email</a> &nbsp; <a href="https://scholar.google.com/">Google Scholar</a></span>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yashwant Soni — IIAI</title>
+<meta name="description" content="Yashwant Soni, seismologist. Interferometry, imaging and artificial intelligence for the solid Earth.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>〰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IIAI <small>Yashwant Soni</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Introduction</a>
+      <a href="research.html">Research</a>
+      <a href="resume.html">Resume</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Yashwant Soni</h1>
+      <p class="lede">Seismologist (PhD). I listen to the Earth's background hum and turn it into images of what lies beneath, using machine learning to read signals faster and more carefully than any one person could.</p>
+      <ul class="acronym" aria-label="IIAI stands for">
+        <li><b>I</b>nterferometry</li>
+        <li><b>I</b>maging</li>
+        <li><b>A</b>rtificial</li>
+        <li><b>I</b>ntelligence</li>
+      </ul>
+    </div>
+    <div class="portraits">
+      <figure class="photo"><img src="images/profile-1.jpg" alt="Portrait of Yashwant Soni"></figure>
+      <figure class="photo"><img src="images/profile-2.jpg" alt="Yashwant Soni in the field"></figure>
+    </div>
+  </div>
+  <div class="wrap trace-band">
+    <canvas id="hero-trace" aria-label="Animated seismogram recording earthquakes" role="img"></canvas>
+  </div>
+  <div class="wrap trace-caption">
+    <span>Live synthetic seismogram, vertical component</span>
+    <span>Tick marks every second</span>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What I work on</h2>
+    <div class="three">
+      <div>
+        <h3>Seismic interferometry</h3>
+        <p>Cross-correlating ambient noise between pairs of seismometers recovers how waves travel between them, with no earthquake required.</p>
+      </div>
+      <div>
+        <h3>Imaging and tomography</h3>
+        <p>Thousands of those travel times are inverted into 3-D velocity models of the crust and upper mantle, revealing faults, basins and slabs.</p>
+      </div>
+      <div>
+        <h3>Machine learning</h3>
+        <p>Neural networks pick seismic phases, denoise records and classify events across years of continuous data.</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem"><a class="btn primary" href="research.html">See my research</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Yashwant Soni</span>
+    <span><a href="https://github.com/yashwantsoni1">GitHub</a> &nbsp; <a href="mailto:your.email@example.com">Email</a> &nbsp; <a href="https://scholar.google.com/">Google Scholar</a></span>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
