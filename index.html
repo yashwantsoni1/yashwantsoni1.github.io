@@ -10,6 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Single, larger profile photo */
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+  .portraits { grid-template-columns: 1fr; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -39,7 +45,6 @@
     </div>
     <div class="portraits">
       <figure class="photo"><img src="images/profile-1.jpg" alt="Portrait of Yashwant Soni"></figure>
-      <figure class="photo"><img src="images/profile-2.jpg" alt="Yashwant Soni in the field"></figure>
     </div>
   </div>
   <div class="wrap trace-band">
